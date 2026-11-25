@@ -1,0 +1,21 @@
+.cvPage {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px auto;
+}
+
+app-cv-list,
+app-cv-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+app-cv-detail {
+    align-self: stretch;
+    justify-content: center;
+}

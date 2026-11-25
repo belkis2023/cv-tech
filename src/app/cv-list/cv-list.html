@@ -1,0 +1,9 @@
+@for (cv of cvsInList(); track cv.id; let odd = $odd) {
+    <div 
+        class="cvItem" 
+        (click)="selectCv(cv)" 
+        [ngStyle]="{'background-color': odd ? 'pink': 'cyan'}">
+        <img [src]="cv.path">
+        <p>{{ cv.firstname }} {{ cv.name }} — {{ cv.job }}</p>
+    </div>
+}

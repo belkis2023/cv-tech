@@ -1,0 +1,26 @@
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.cvItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    margin: 10px;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 12%);
+}
+
+.cvItem p {
+  text-align: left;
+}

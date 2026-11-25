@@ -1,0 +1,27 @@
+@if (detailedCv(); as cv) {
+    <article class="candidate">
+        <div class="cover"></div>
+
+        <div class="cardBody">
+            @if (cv.path) {
+                <img
+                class="portrait"
+                [src]="cv.path">
+            } @else {
+                <div class="portrait portraitPlaceholder">
+                    {{ cv.firstname.charAt(0) }}
+                </div>
+            }
+            <h2>{{ cv.firstname }} {{ cv.name }}</h2>
+            <p class="job">{{ cv.job }}</p>
+            <div class="facts">
+                <p>Age: {{ cv.age }}</p>
+                <p>CIN: {{ cv.cin }}</p>
+            </div>
+        </div>
+        <footer class="cardFooter">CV profile . {{ cv.id }}</footer>
+        
+    </article>
+} @else {
+    <p>Select a CV to see its details.</p>
+}

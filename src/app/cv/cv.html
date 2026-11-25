@@ -1,0 +1,7 @@
+<div class="cvPage">
+    <app-cv-list 
+        (cvSelected)="selectedCv.set($event)" 
+        [cvsInList]="cvs()"
+    ></app-cv-list>
+    <app-cv-detail [detailedCv]="selectedCv()"></app-cv-detail>
+</div>
