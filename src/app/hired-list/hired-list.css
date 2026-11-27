@@ -1,0 +1,11 @@
+.listeEmbauche {
+    background-color: rgb(199, 221, 213);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}

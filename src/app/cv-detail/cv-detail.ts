@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
-import type { Cv as CvModel } from '../model/cv';
+import { Component, inject, input } from '@angular/core';
+import type { Cv, Cv as CvModel } from '../model/cv';
+import { HireService } from '../services/hire-service';
 
 @Component({
   imports: [],
@@ -9,6 +10,13 @@ import type { Cv as CvModel } from '../model/cv';
 })
 export class CvDetail {
 
-  detailedCv = input<CvModel | null>()
+  detailedCv = input<CvModel | null>();
+  private hireService = inject(HireService);
+
+
+  //handle the hiring logic
+  hireCv(cv: Cv) {
+    this.hireService.addCv(cv);
+  }
 
 }

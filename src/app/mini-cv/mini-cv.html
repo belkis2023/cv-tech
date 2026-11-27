@@ -1,0 +1,9 @@
+<div 
+    class="cvItem"
+    [style.--card-width]="cardWidth()"
+    [style.--photo-size]="photoSize()"  
+    >
+    <img [src]="cv().path">
+    <p>{{ cv().firstname }} {{ cv().name }}</p>
+</div>
+

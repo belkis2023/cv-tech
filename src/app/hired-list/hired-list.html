@@ -1,0 +1,9 @@
+@if (hiredCvs().length > 0) {
+    <h4>Liste des pré-embauchés</h4>
+    <div class="listeEmbauche">
+        @for(cv of hiredCvs(); track cv.id) {
+                <app-mini-cv cardWidth="200px" photoSize="60px"
+                [cv] ="cv"></app-mini-cv>
+        } 
+    </div>
+}

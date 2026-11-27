@@ -1,8 +1,9 @@
 import { Component, input, output } from '@angular/core';
 import type { Cv as CvModel } from '../model/cv';
 import { NgStyle } from '@angular/common';
+import { MiniCv } from '../mini-cv/mini-cv';
 @Component({
-  imports: [NgStyle],
+  imports: [NgStyle, MiniCv],
   selector: 'app-cv-list',
   styleUrl: './cv-list.css',
   templateUrl: './cv-list.html',
@@ -15,5 +16,7 @@ export class CvList {
   selectCv(cv: CvModel) {
     this.cvSelected.emit(cv);
   }
+  
+  
 
 }

@@ -1,52 +1,35 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CvDetail } from '../cv-detail/cv-detail';
 import { CvList } from '../cv-list/cv-list';
 import type { Cv as CvModel} from '../model/cv';
+import { CvService } from '../services/cv-service';
+import { HireService } from '../services/hire-service';
+import { HiredList } from '../hired-list/hired-list';
+
 
 
 @Component({
-  imports: [CvDetail, CvList],
+  imports: [CvDetail, CvList, HiredList],
   selector: 'app-cv',
   styleUrl: './cv.css',
   templateUrl: './cv.html',
 })
 
-//logique: cv huwa l parent, cv-list w cv-detail children , bch yabda fih list te3 les cvs, 
+//logique: cv huwa l parent, cv-list w cv-detail children 
 
 export class Cv {
-  //the list of the hardcoded cvs that will be displayed in the beginning
-  cvs = signal<CvModel[]>([
-    {
-      id: 1,
-      name: 'Ben Ali',
-      firstname: 'Sara',
-      age: 24,
-      cin: '12345678',
-      job: 'Software Developer',
-      path: '/assets/sara.jpg' 
-    },
-    {
-      id: 2,
-      name: 'Trabelsi',
-      firstname: 'Ahmed',
-      age: 30,
-      cin: '87654321',
-      job: 'Designer',
-      path: '/assets/man.jpg' 
-    },
-    {
-      id: 3,
-      name: 'Jebali',
-      firstname: 'Nadia',
-      age: 27,
-      cin: '11223344',
-      job: 'Project Manager', 
-      path: '/assets/nadia.jpg' 
-    }
-  ]);
+  //we inject the service, by doing this we get the same instance of the service everywhere, 
+  private cvService = inject(CvService);
+  private hireService = inject(HireService);
 
+
+  cvs = this.cvService.cvs;
   //the selected cv will be passed on to the cv detail child component
   selectedCv = signal<CvModel | null>(null);
 
+
+  //the hired cvs logic
+  hiredCvs = this.hireService.hiredCvs;
+  
 
 }
