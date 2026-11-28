@@ -1,6 +1,7 @@
 import { Component, inject, input } from '@angular/core';
-import type { Cv, Cv as CvModel } from '../model/cv';
+import type { Cv as CvModel } from '../model/cv';
 import { HireService } from '../services/hire-service';
+import { NotificationService } from '../services/notification-service';
 
 @Component({
   imports: [],
@@ -12,11 +13,25 @@ export class CvDetail {
 
   detailedCv = input<CvModel | null>();
   private hireService = inject(HireService);
+  private notifications = inject(NotificationService);
 
 
-  //handle the hiring logic
-  hireCv(cv: Cv) {
-    this.hireService.addCv(cv);
+  //handle the hiring logic and show the corresponding toast
+  hireCv(cv: CvModel) {
+    const result = this.hireService.addCv(cv);
+    const fullName = `${cv.firstname} ${cv.name}`;
+
+    switch (result) {
+      case 'added':
+        this.notifications.success(`${fullName} has been hired!`);
+        break;
+      case 'already-hired':
+        this.notifications.error(`${fullName} has been hired!`);
+        break;
+      case 'budget-exceeded':
+        this.notifications.warning(`${fullName} hired, but the budget has been exceeded`);
+        break;
+    }
   }
 
 }
