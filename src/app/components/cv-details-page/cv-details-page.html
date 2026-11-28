@@ -1,0 +1,15 @@
+@if (cv(); as current) {
+    <div class="details">
+    <img [src]="current.path" [alt]="current.firstname" />
+    <h2>{{ current.firstname }} {{ current.name }}</h2>
+    <p>{{ current.job }}</p>
+    <p>Age: {{ current.age }}</p>
+    <p>CIN: {{ current.cin }}</p>
+
+    <button class="delete-button" matButton="filled" (click)="deleteCv()">Delete</button>
+    <a matButton="filled" routerLink="/cvs">Back to list</a>
+  </div>
+} @else {
+    <p>CV not found.</p>
+    <a routerLink="/cvs">Back to list</a>
+}

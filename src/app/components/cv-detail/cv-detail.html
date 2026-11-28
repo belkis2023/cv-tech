@@ -19,8 +19,14 @@
                 <p>CIN: {{ cv.cin }}</p>
             </div>
         </div>
-        <footer class="cardFooter">CV profile . {{ cv.id }}</footer>
-        <button (click)="hireCv(cv)">Embaucher</button>
+        <footer class="cardFooter">
+            CV profile . {{ cv.id }}
+            <div class="buttons">
+                <button mat-button (click)="hireCv(cv)">Embaucher</button>
+                <button mat-button [routerLink]="['/cvs', cv.id]">Détails</button>
+                <!-- we're combining the pieces: /cvs/1 , 2 ... (aka building the link) -->
+            </div>
+        </footer>
     </article>
 } @else {
     <p>Select a CV to see its details.</p>

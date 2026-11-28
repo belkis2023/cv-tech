@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  text-align: center;
+  padding: 60px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+button {
+    margin: 8px 4px 0;
+}
+
+.delete-button {
+  --mat-button-filled-container-color: #b3261e;
+  --mat-button-filled-label-text-color: white;
+}
+
+  

@@ -2,9 +2,11 @@ import { Component, inject, input } from '@angular/core';
 import type { Cv as CvModel } from '../../model/cv';
 import { HireService } from '../../services/hire-service';
 import { NotificationService } from '../../services/notification-service';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [],
+  imports: [MatButtonModule, RouterLink],
   selector: 'app-cv-detail',
   styleUrl: './cv-detail.css',
   templateUrl: './cv-detail.html',

@@ -34,9 +34,27 @@ export class CvService {
       cin: '11223344',
       job: 'Project Manager', 
       path: '/assets/nadia.jpg' 
+    }, 
+    {
+      id: 4,
+      name: 'Mansour',
+      firstname: 'Yasmine',
+      age: 26,
+      cin: '00000000',
+      job: 'UX/UI Designer', 
+      path: '/assets/yasmine.jpg' 
     }
   ]);
 
   readonly cvs = this._cvs.asReadonly();
+
+  //methods that are gonna be used by the cv details page, for a specific cv, to see its details+delete
+  getCvById(id: number): CvModel | undefined {
+    return this._cvs().find((e) => e.id === id);
+  }
+
+  deleteCv(id: number) {
+    this._cvs.update((list) => list.filter((e) => e.id != id));
+  }
 
 }
