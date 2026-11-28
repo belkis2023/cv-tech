@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { HireService } from '../services/hire-service';
+import { HireService } from '../../services/hire-service';
 import { MiniCv } from '../mini-cv/mini-cv';
 
 @Component({

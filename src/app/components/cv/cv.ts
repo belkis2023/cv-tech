@@ -1,9 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { CvDetail } from '../cv-detail/cv-detail';
 import { CvList } from '../cv-list/cv-list';
-import type { Cv as CvModel} from '../model/cv';
-import { CvService } from '../services/cv-service';
-import { HireService } from '../services/hire-service';
+import type { Cv as CvModel} from '../../model/cv';
+import { CvService } from '../../services/cv-service';
+import { HireService } from '../../services/hire-service';
 import { HiredList } from '../hired-list/hired-list';
 
 

@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import type { Cv as CvModel } from '../model/cv';
+import type { Cv as CvModel } from '../../model/cv';
 
 @Component({
   imports: [],

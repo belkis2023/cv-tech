@@ -1,7 +1,7 @@
 import { Component, inject, input } from '@angular/core';
-import type { Cv as CvModel } from '../model/cv';
-import { HireService } from '../services/hire-service';
-import { NotificationService } from '../services/notification-service';
+import type { Cv as CvModel } from '../../model/cv';
+import { HireService } from '../../services/hire-service';
+import { NotificationService } from '../../services/notification-service';
 
 @Component({
   imports: [],

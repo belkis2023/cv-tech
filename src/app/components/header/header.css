@@ -1,0 +1,20 @@
+.brand {
+  margin-right: 24px;
+  font-weight: 600;
+}
+
+.active {
+  background: rgba(80, 89, 154, 0.2);
+}
+
+mat-toolbar {
+  --mat-toolbar-container-background-color: #cfe8ff;
+  --mat-toolbar-container-text-color: #0d2b45;
+}
+
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
